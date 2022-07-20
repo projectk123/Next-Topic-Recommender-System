@@ -1,1 +1,6 @@
 gains
+web/mock_dataset_final.csv
+web/topics_to_be_recommended.csv
+web/topics.csv
+model/mock_dataset_final.csv
+model/topics.csv
