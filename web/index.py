@@ -508,7 +508,7 @@ for i in range(0, len(distances.flatten())):
 
     if i == 0:
         # print('Recommendations for {0}:\n'.format(some_df.index[query_index]))
-        st.write(f"Recommendations for {0}:\n".format(some_df.index[query_index]))
+        st.write(f" # Recommendations for User {target_user}:\n")
     else:
         KNN_users.append(some_df.index[indices.flatten()[i]])
         # print('{0}: {1}, with distance of {2}:'.format(i, some_df.index[indices.flatten()[i]], distances.flatten()[i]))
@@ -536,11 +536,13 @@ def next_topic_to_be_recommended(for_user,from_user):
         if topic_id==last_topic:
             c=1
     return -1
-next_topic_to_be_recommended(10.0,19.0) 
+# next_topic_to_be_recommended(10.0,19.0) 
 results = []
     
 for user in KNN_users:
-    results.append(next_topic_to_be_recommended(target_user,user))
+    x = next_topic_to_be_recommended(target_user,user)
+    if x!=-1:
+        results.append(x)
 for topic in results:
     print(topic)
 
@@ -582,9 +584,11 @@ def path_string(target_user,topic):
     return s
 first, second, third, fourth, fifth, sixth = st.columns(6)
 first.graphviz_chart(path_string(target_user,-1))
-second.graphviz_chart(path_string(target_user,results[0][0]))
-third.graphviz_chart(path_string(target_user,results[1][0]))
-fourth.graphviz_chart(path_string(target_user,results[2][0]))
-fifth.graphviz_chart(path_string(target_user,results[3][0]))
-sixth.graphviz_chart(path_string(target_user,results[4][0]))
-
+try:
+    second.graphviz_chart(path_string(target_user,results[0][0]))
+    third.graphviz_chart(path_string(target_user,results[1][0]))
+    fourth.graphviz_chart(path_string(target_user,results[2][0]))
+    fifth.graphviz_chart(path_string(target_user,results[3][0]))
+    sixth.graphviz_chart(path_string(target_user,results[4][0]))
+except:
+    st.write("There does not exist five neighbors for this particular user")
