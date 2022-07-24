@@ -2,5 +2,7 @@ gains
 web/mock_dataset_final.csv
 web/topics_to_be_recommended.csv
 web/topics.csv
+web/user_course_path_history.csv
+model/user_course_path_history.csv
 model/mock_dataset_final.csv
 model/topics.csv

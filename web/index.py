@@ -298,7 +298,9 @@ for index, row in df.iterrows():
         user_course_path_df.loc[row['user_id']-1]=row_x
         
 #     user_course_path_df.loc[user_course_path_df['user_id'] == row['user_id']]    
+user_course_path_df.to_csv('user_course_path_history.csv')
 # user_course_path_df.head(20)
+
 
 
 # In[6]:
