@@ -15,7 +15,7 @@ We are trying to integrate [sli_rec model](https://github.com/zepingyu0512/sli_r
 
 As can be seen below the 6 paths of the same user.
 
-
+![Next Topic recommender visualized 2](https://github.com/projectk123/Next-Topic-Recommender-System/blob/master/images/deployed_ss_1.jpg)
 
 The first one is the original path and next 5 are also the same but a node is added to the bottom for the recommendation which is inferred from 5 nearest users depicted by red node and edge.
 
